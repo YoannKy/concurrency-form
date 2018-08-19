@@ -1,0 +1,27 @@
+<div>
+  <fieldset>
+    <legend>Choose your advantage</legend>
+    <div v-for="advantage in advantages">
+      <input type="checkbox" :id="advantage.name" :name="advantage.name" v-model="advantage.selected" @click="addToQueue" />
+      <label :for="advantage.name">{{advantage.name}}</label>
+    </div>
+  </fieldset>
+  <table>
+    <thead>
+      <tr>
+        <th>Order</th>
+        <th>Cheap</th>
+        <th>Fast</th>
+        <th>Reliable</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="history in histories">
+        <td>{{history.index}}</td>
+        <td>{{history.cheap}}</td>
+        <td>{{history.fast}}</td>
+        <td>{{history.reliable}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
